@@ -24,4 +24,24 @@ class UserRepository{
     }
   }
 
+  Future<User> signUp(User user) async{
+    final loginUrl = "$URL/api/cliente";
+
+    final body = {
+      'nome' : user.name,
+      'email' : user.email,
+      'senha' : user.password,
+      'telepone' : user.phone,
+      'rua' : user.rua,
+      'numero' : user.numero
+    };
+
+    final response = await http.post(loginUrl,headers: header, body: jsonEncode((body)));
+    if(response.statusCode == 200){
+      return User.fromJson(jsonDecode(response.body));
+    }else{
+      return Future.error(response.body);
+    }
+  }
+
 }

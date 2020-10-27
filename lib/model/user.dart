@@ -28,6 +28,8 @@ class User {
   String numero;
   String password;
 
+
+
   @override
   String toString() {
     return 'User{id: $id, name: $name, email: $email, phone: $phone, rua: $rua, numero: $numero, password: $password}';

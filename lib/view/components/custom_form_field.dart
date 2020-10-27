@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter/services.dart';
 
 class CustomFormField extends StatelessWidget {
   final String label;
@@ -8,6 +8,7 @@ class CustomFormField extends StatelessWidget {
   final bool enabled;
   final Function onChange;
   final bool obscure;
+  final List<TextInputFormatter> types;
 
   CustomFormField(
       {@required this.label,
@@ -15,7 +16,8 @@ class CustomFormField extends StatelessWidget {
       @required this.enabled,
       @required this.onChange,
         this.obscure = false,
-      this.keyboardType});
+      this.keyboardType,
+      this.types});
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,7 @@ class CustomFormField extends StatelessWidget {
                 errorText: errorText),
             onChanged: onChange,
             keyboardType: keyboardType,
+            inputFormatters: types,
           ),
       ],
     );

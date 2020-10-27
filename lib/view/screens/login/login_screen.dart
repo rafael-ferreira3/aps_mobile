@@ -1,6 +1,7 @@
 import 'package:aps_mobile/store/login_store.dart';
 import 'package:aps_mobile/store/user_manager_store.dart';
 import 'package:aps_mobile/view/components/custom_form_field.dart';
+import 'package:aps_mobile/view/screens/signup/SignUpScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
@@ -40,7 +41,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Sign In'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -58,6 +59,7 @@ class LoginScreen extends StatelessWidget {
                   keyboardType: TextInputType.emailAddress,
                 );
               }),
+              SizedBox(height: 8.0),
               Observer(builder: (_) {
                 return CustomFormField(
                     label: "Senha",
@@ -76,9 +78,9 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 16)),
                     GestureDetector(
                       onTap: () {
-                      /*Navigator.of(context).push(
+                      Navigator.of(context).push(
                           MaterialPageRoute(builder: (_) => SignUpScreen())
-                      );*/
+                      );
                       },
                       child: Text('Cadastre-se',
                           style: TextStyle(
