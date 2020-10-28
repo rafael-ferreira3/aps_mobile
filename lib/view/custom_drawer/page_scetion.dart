@@ -26,7 +26,7 @@ class PageSection extends StatelessWidget {
           label: PRODUTOS_LABEL,
           iconData: PRODUTOS_ICON,
           onTap: () {
-            pageStore.setPage(PRODUTOS_PAGE);
+            //pageStore.setPage(PRODUTOS_PAGE);
           },
           highlighted: pageStore.page == PRODUTOS_PAGE,
         ),
@@ -34,7 +34,7 @@ class PageSection extends StatelessWidget {
           label: PEDIDOS_LABEL,
           iconData: PEDIDOS_ICON,
           onTap: () {
-            pageStore.setPage(PEDIDOS_PAGE);
+            //pageStore.setPage(PEDIDOS_PAGE);
           },
           highlighted: pageStore.page == PEDIDOS_PAGE,
         ),
@@ -42,7 +42,7 @@ class PageSection extends StatelessWidget {
           label: LOJAS_LABEL,
           iconData: LOJAS_ICON,
           onTap: () {
-            pageStore.setPage(LOJAS_PAGE);
+            //pageStore.setPage(LOJAS_PAGE);
           },
           highlighted: pageStore.page == LOJAS_PAGE,
         ),
@@ -50,7 +50,7 @@ class PageSection extends StatelessWidget {
           label: MINHA_CONTA_LABEL,
           iconData: MINHA_CONTA_ICON,
           onTap: () {
-            pageStore.setPage(MINHA_CONTA_PAGE);
+            //pageStore.setPage(MINHA_CONTA_PAGE);
           },
           highlighted: pageStore.page == MINHA_CONTA_PAGE,
         ),

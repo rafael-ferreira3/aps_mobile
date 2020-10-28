@@ -1,8 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.aps_mobile">
+   <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="aps_mobile"
-        android:icon="@mipmap/ic_launcher"
+        android:label="Loja Aps"
+        android:icon="@mipmap/loja_aps_icon"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"

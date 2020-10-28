@@ -1,12 +1,13 @@
 import 'dart:convert';
 
+import 'package:aps_mobile/helpers/repositoryMessageHandler.dart';
 import 'package:aps_mobile/model/user.dart';
 import 'package:http/http.dart' as http;
 import '../helpers/constants.dart';
 
 class UserRepository{
 
-  final header = {'Content-Type': 'application/json'};
+  final header = {'Content-Type': 'application/json;charset=UTF-8'};
 
   Future<User> loginWithEmail(String email, String password) async{
     final loginUrl = "$URL/api/logarCliente";
@@ -18,9 +19,9 @@ class UserRepository{
 
     final response = await http.post(loginUrl,headers: header, body: jsonEncode((body)));
     if(response.statusCode == 200){
-      return User.fromJson(jsonDecode(response.body));
+      return User.fromJson(jsonDecode(utf8.decode(response.bodyBytes)));
     }else{
-      return Future.error(response.body);
+      return Future.error(getErrorMessage(utf8.decode(response.bodyBytes)));
     }
   }
 
@@ -38,9 +39,9 @@ class UserRepository{
 
     final response = await http.post(loginUrl,headers: header, body: jsonEncode((body)));
     if(response.statusCode == 200){
-      return User.fromJson(jsonDecode(response.body));
+      return User.fromJson(jsonDecode(utf8.decode(response.bodyBytes)));
     }else{
-      return Future.error(response.body);
+      return Future.error(getErrorMessage(utf8.decode(response.bodyBytes)));
     }
   }
 
