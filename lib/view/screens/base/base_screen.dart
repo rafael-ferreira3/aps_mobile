@@ -1,3 +1,4 @@
+import 'package:aps_mobile/view/screens/category/category_screen.dart';
 import 'package:mobx/mobx.dart';
 import 'package:aps_mobile/store/page_store.dart';
 import 'package:aps_mobile/view/screens/home/home_screen.dart';
@@ -36,7 +37,7 @@ class _BaseScreenState extends State<BaseScreen> {
         controller: pageController,
         children: [
           HomeScreen(),
-          Container(color: Colors.green,),
+          CategoryScreen(),
           Container(color: Colors.yellow,),
           Container(color: Colors.purple,),
           Container(color: Colors.blue,),

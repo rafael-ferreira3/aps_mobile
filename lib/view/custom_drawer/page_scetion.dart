@@ -26,7 +26,7 @@ class PageSection extends StatelessWidget {
           label: PRODUTOS_LABEL,
           iconData: PRODUTOS_ICON,
           onTap: () {
-            //pageStore.setPage(PRODUTOS_PAGE);
+            pageStore.setPage(PRODUTOS_PAGE);
           },
           highlighted: pageStore.page == PRODUTOS_PAGE,
         ),

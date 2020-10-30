@@ -1,3 +1,5 @@
+import 'package:aps_mobile/repositories/category_repository.dart';
+import 'package:aps_mobile/store/category_store.dart';
 import 'package:aps_mobile/view/custom_drawer/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -9,7 +11,13 @@ class HomeScreen extends StatelessWidget {
         child: Scaffold(
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.shopping_cart),
-        onPressed: () {},
+        onPressed: () async{
+          /*CategoryRepository categoryRepository = CategoryRepository();
+          print(await categoryRepository.buscaTodasCategorias());
+          print(await categoryRepository.getCategoryImg('http://15.228.34.148:8082/api/categoria/img/7'));
+          CategoryStore categoryStore = CategoryStore();
+          print(await categoryStore.getCategoryImage('http://15.228.34.148:8082/api/categoria/img/7'));*/
+        },
       ),
       drawer: CustomDrawer(),
       backgroundColor: Theme.of(context).primaryColor,
