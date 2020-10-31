@@ -85,7 +85,9 @@ class ProductsTab extends StatelessWidget {
         Icons.keyboard_arrow_right,
         color: Theme.of(context).primaryColor,
       ),
-      onTap: () {},
+      onTap: () {
+        //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Product));
+      },
     );
   }
 }

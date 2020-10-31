@@ -1,5 +1,5 @@
 import 'package:aps_mobile/store/user_manager_store.dart';
-import 'file:///C:/aps/aps_mobile/lib/view/screens/base/base_screen.dart';
+import 'package:aps_mobile/view/screens/base/base_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 

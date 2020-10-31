@@ -1,7 +1,7 @@
-import 'file:///C:/aps/aps_mobile/lib/view/tabs/product/products_tab.dart';
+import 'package:aps_mobile/view/tabs/home/home_tab.dart';
+import 'package:aps_mobile/view/tabs/product/category_tab.dart';
 import 'package:mobx/mobx.dart';
 import 'package:aps_mobile/store/page_store.dart';
-import 'file:///C:/aps/aps_mobile/lib/view/tabs/home/home_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 

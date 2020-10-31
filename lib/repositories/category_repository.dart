@@ -21,13 +21,4 @@ class CategoryRepository{
     }
   }
 
-  Future<String> getCategoryImg(String imgLink) async{
-    final response = await http.get(imgLink);
-    if(response.statusCode == 200){
-      return response.body;
-    }else{
-      return Future.error("Erro");
-    }
-  }
-
 }

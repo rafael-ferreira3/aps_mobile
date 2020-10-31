@@ -1,7 +1,8 @@
-import 'dart:convert';
 import 'dart:typed_data';
+import 'package:aps_mobile/helpers/ImageHelper.dart';
 import 'package:aps_mobile/model/category.dart';
 import 'package:aps_mobile/repositories/category_repository.dart';
+import 'package:aps_mobile/repositories/image_repository.dart';
 import 'package:mobx/mobx.dart';
 
 part 'category_store.g.dart';
@@ -10,7 +11,8 @@ class CategoryStore = _CategoryStore with _$CategoryStore;
 
 abstract class _CategoryStore with Store {
 
-  CategoryRepository _categoryRepository = CategoryRepository();
+  final _categoryRepository = CategoryRepository();
+  final _imageRepository = ImageRepository();
 
   @observable
   List<Category> categorias = [];
@@ -31,13 +33,8 @@ abstract class _CategoryStore with Store {
   }
 
   Future<Uint8List> getCategoryImage(String imgLink) async{
-    String imgBase64 = await _categoryRepository.getCategoryImg(imgLink);
-    return _imageFromBase64String(imgBase64);
-  }
-
-  Uint8List _imageFromBase64String(String base64String) {
-    String imgBase64 = base64String.split(',')[1];
-    return base64Decode(imgBase64);
+    String imgBase64 = await _imageRepository.getImgFromLink(imgLink);
+    return imageFromBase64String(imgBase64);
   }
 
 
