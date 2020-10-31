@@ -1,7 +1,7 @@
-import 'package:aps_mobile/view/screens/category/category_screen.dart';
+import 'file:///C:/aps/aps_mobile/lib/view/tabs/product/products_tab.dart';
 import 'package:mobx/mobx.dart';
 import 'package:aps_mobile/store/page_store.dart';
-import 'package:aps_mobile/view/screens/home/home_screen.dart';
+import 'file:///C:/aps/aps_mobile/lib/view/tabs/home/home_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -36,8 +36,8 @@ class _BaseScreenState extends State<BaseScreen> {
         physics: NeverScrollableScrollPhysics(),
         controller: pageController,
         children: [
-          HomeScreen(),
-          CategoryScreen(),
+          HomeTab(),
+          ProductsTab(),
           Container(color: Colors.yellow,),
           Container(color: Colors.purple,),
           Container(color: Colors.blue,),

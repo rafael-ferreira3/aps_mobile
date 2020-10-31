@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
-import 'package:aps_mobile/model/Category.dart';
+import 'package:aps_mobile/model/category.dart';
 import 'package:aps_mobile/repositories/category_repository.dart';
 import 'package:mobx/mobx.dart';
 

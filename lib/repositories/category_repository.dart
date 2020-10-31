@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:aps_mobile/helpers/constants.dart';
 import 'package:aps_mobile/helpers/repositoryMessageHandler.dart';
-import 'package:aps_mobile/model/Category.dart';
+import 'package:aps_mobile/model/category.dart';
 import 'package:http/http.dart' as http;
 
 class CategoryRepository{
