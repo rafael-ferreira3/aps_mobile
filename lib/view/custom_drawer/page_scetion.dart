@@ -46,14 +46,14 @@ class PageSection extends StatelessWidget {
           },
           highlighted: pageStore.page == LOJAS_PAGE,
         ),
-        PageTile(
+        /*PageTile(
           label: MINHA_CONTA_LABEL,
           iconData: MINHA_CONTA_ICON,
           onTap: () {
             //pageStore.setPage(MINHA_CONTA_PAGE);
           },
           highlighted: pageStore.page == MINHA_CONTA_PAGE,
-        ),
+        ),*/
       ],
     );
   }
