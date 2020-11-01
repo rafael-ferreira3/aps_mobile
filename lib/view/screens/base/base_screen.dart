@@ -37,7 +37,7 @@ class _BaseScreenState extends State<BaseScreen> {
         controller: pageController,
         children: [
           HomeTab(),
-          ProductsTab(),
+          CategoryTab(),
           Container(color: Colors.yellow,),
           Container(color: Colors.purple,),
           Container(color: Colors.blue,),

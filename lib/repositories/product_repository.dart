@@ -14,7 +14,7 @@ class ProductRepository{
     final response = await http.get(buscaCategoriasURl);
     if(response.statusCode == 200){
       return jsonDecode(utf8.decode(response.bodyBytes)).map<Product>((data){
-        return Product(idCategoria: data['idCategoria'],descricao: data['descr'],img:data['img'] );
+        return Product.fromJson(data);
       }).toList();
     }else{
       return Future.error(getErrorMessage(utf8.decode(response.bodyBytes)));

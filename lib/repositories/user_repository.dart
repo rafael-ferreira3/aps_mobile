@@ -32,7 +32,7 @@ class UserRepository{
       'nome' : user.name,
       'email' : user.email,
       'senha' : user.password,
-      'telepone' : user.phone,
+      'telefone' : user.phone,
       'rua' : user.rua,
       'numero' : user.numero
     };

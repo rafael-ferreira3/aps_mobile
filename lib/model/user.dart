@@ -9,6 +9,17 @@ class User {
         this.numero,
         this.password});
 
+  Map<String, dynamic> toJson(){
+    return {
+      'idCliente' : id,
+      'nome' : name,
+      'email' : email,
+      'telefone' : phone,
+      'rua' : rua,
+      'numero' : numero
+    };
+  }
+
   factory User.fromJson(Map<String, dynamic> userLogged){
     return User(
       id: userLogged["idCliente"],

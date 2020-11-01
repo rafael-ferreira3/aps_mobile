@@ -1,12 +1,14 @@
+import 'package:aps_mobile/store/cart_store.dart';
 import 'package:aps_mobile/store/user_manager_store.dart';
 import 'package:aps_mobile/view/screens/base/base_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-
+import 'package:flutter/services.dart';
 import 'helpers/colors_constants.dart';
 import 'store/page_store.dart';
 
 void main() {
+  setupConfiguration();
   setupLocations();
   runApp(MyApp());
 }
@@ -14,6 +16,13 @@ void main() {
 void setupLocations() {
   GetIt.I.registerSingleton(PageStore());
   GetIt.I.registerSingleton(UserManagerStore());
+  GetIt.I.registerSingleton(CartStore());
+}
+
+void setupConfiguration(){
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: statusBar, //or set color with: Color(0xFF0000FF)
+  ));
 }
 
 class MyApp extends StatelessWidget {

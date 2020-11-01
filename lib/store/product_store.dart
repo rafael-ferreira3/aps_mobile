@@ -16,7 +16,7 @@ abstract class _ProductStore with Store {
   final _imageRepository = ImageRepository();
 
   @observable
-  List<Product> products;
+  List<Product> products = [];
 
   @observable
   bool loading = false;
@@ -28,7 +28,7 @@ abstract class _ProductStore with Store {
   Future<void> buscaProductosCategoria(int idCategoria) async{
     loading = true;
 
-    //BUSCA PRODUTOS POR CTAGEORIA
+    products = await _productRepository.buscaProdutosCategoria(idCategoria);
 
     loading = false;
   }

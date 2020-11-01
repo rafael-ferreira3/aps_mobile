@@ -1,12 +1,13 @@
 import 'package:aps_mobile/store/category_store.dart';
 import 'package:aps_mobile/view/custom_drawer/custom_drawer.dart';
+import 'package:aps_mobile/view/tabs/product/product_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-class ProductsTab extends StatelessWidget {
+class CategoryTab extends StatelessWidget {
   final CategoryStore _categoryStore = CategoryStore();
 
-  ProductsTab() {
+  CategoryTab() {
     _categoryStore.buscaTodasCategorias();
   }
 
@@ -86,7 +87,11 @@ class ProductsTab extends StatelessWidget {
         color: Theme.of(context).primaryColor,
       ),
       onTap: () {
-        //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Product));
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => ProductTab(
+                category: _categoryStore.categorias[index]
+            ))
+        );
       },
     );
   }
