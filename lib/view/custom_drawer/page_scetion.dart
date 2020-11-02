@@ -42,7 +42,7 @@ class PageSection extends StatelessWidget {
           label: LOJAS_LABEL,
           iconData: LOJAS_ICON,
           onTap: () {
-            //pageStore.setPage(LOJAS_PAGE);
+            pageStore.setPage(LOJAS_PAGE);
           },
           highlighted: pageStore.page == LOJAS_PAGE,
         ),
