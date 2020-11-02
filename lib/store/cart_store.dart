@@ -1,7 +1,9 @@
 import 'package:aps_mobile/model/cart.dart';
+import 'package:aps_mobile/model/pedido.dart';
 import 'package:aps_mobile/model/product.dart';
 import 'package:aps_mobile/model/user.dart';
 import 'package:aps_mobile/repositories/cart_repository.dart';
+import 'package:aps_mobile/repositories/pedido_repository.dart';
 import 'package:mobx/mobx.dart';
 
 part 'cart_store.g.dart';
@@ -11,6 +13,7 @@ class CartStore = _CartStore with _$CartStore;
 abstract class _CartStore with Store {
 
   final _cartRepository = CartRepository();
+  final _pedidoRepository = PedidoRepository();
 
   @observable
   List<Cart> itensCarrinho = [];
@@ -80,6 +83,16 @@ abstract class _CartStore with Store {
     for(Cart cart in itensCarrinho) {
       totalProdutos += cart.produto.preco * cart.quantidade;
     }
+  }
+
+
+  Future<Pedido> finalizarPedidoCliente(User user) async{
+    loading = true;
+
+    Pedido pedido = await _pedidoRepository.finalizarPedidoCliente(user.id);
+
+    loading = false;
+    return pedido;
   }
 
 }

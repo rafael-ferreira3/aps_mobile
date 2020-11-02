@@ -31,20 +31,20 @@ class CardPrice extends StatelessWidget {
                   ],
                 ),
                 Divider(),
-                Row(
+                /*Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text("Frete"),
                     Text("R\$ ${_cartStore.frete}"),
                   ],
                 ),
-                Divider(),
+                Divider(),*/
                 SizedBox(height: 12.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text("Total",style: TextStyle(fontWeight: FontWeight.w700),),
-                    Text("R\$ ${(_cartStore.totalProdutos + _cartStore.frete).toStringAsFixed(2)}",
+                    Text("R\$ ${(_cartStore.totalProdutos).toStringAsFixed(2)}",
                       style: TextStyle(color: Theme.of(context).primaryColor,fontSize: 16.0, fontWeight: FontWeight.w500),
                     ),
                   ],

@@ -1,8 +1,10 @@
+import 'package:aps_mobile/model/pedido.dart';
 import 'package:aps_mobile/store/cart_store.dart';
 import 'package:aps_mobile/store/user_manager_store.dart';
 import 'package:aps_mobile/view/screens/cart/components/card_price.dart';
 import 'package:aps_mobile/view/screens/cart/components/cart_tile.dart';
 import 'package:aps_mobile/view/screens/login/login_screen.dart';
+import 'package:aps_mobile/view/screens/pedido/pedido_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
@@ -80,9 +82,7 @@ class CartScreen extends StatelessWidget {
                   children: [
                     Column(
                       children: _cartStore.itensCarrinho.map(
-                          (cartItem) => Observer(
-                            builder: (_) => CartTile(cart: cartItem),
-                          )
+                          (cartItem) => CartTile(cart: cartItem)
                       ).toList(),
                     ),
                     CardPrice(),
@@ -92,7 +92,13 @@ class CartScreen extends StatelessWidget {
                       ),
                       color: Theme.of(context).primaryColor,
                       textColor: Colors.white,
-                      onPressed: () {},
+                      onPressed: () async{
+                        Pedido pedido = await _cartStore.finalizarPedidoCliente(_userManagerStore.user);
+                        await Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => PedidoScreen(pedido: pedido)
+                        ));
+                        _cartStore.buscaCarrinhoClienteAndCalculaTotal(_userManagerStore.user.id);
+                      },
                     )
                   ],
                 );

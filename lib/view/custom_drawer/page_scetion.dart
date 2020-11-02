@@ -34,7 +34,7 @@ class PageSection extends StatelessWidget {
           label: PEDIDOS_LABEL,
           iconData: PEDIDOS_ICON,
           onTap: () {
-            //pageStore.setPage(PEDIDOS_PAGE);
+            pageStore.setPage(PEDIDOS_PAGE);
           },
           highlighted: pageStore.page == PEDIDOS_PAGE,
         ),

@@ -1,5 +1,6 @@
 import 'package:aps_mobile/view/tabs/home/home_tab.dart';
 import 'package:aps_mobile/view/tabs/category/category_tab.dart';
+import 'package:aps_mobile/view/tabs/pedido/pedido_tab.dart';
 import 'package:mobx/mobx.dart';
 import 'package:aps_mobile/store/page_store.dart';
 import 'package:flutter/material.dart';
@@ -38,9 +39,8 @@ class _BaseScreenState extends State<BaseScreen> {
         children: [
           HomeTab(),
           CategoryTab(),
-          Container(color: Colors.yellow,),
-          Container(color: Colors.purple,),
-          Container(color: Colors.blue,),
+          PedidoTab(),
+          Container(color: Colors.purple,)
         ],
       ),
     );
