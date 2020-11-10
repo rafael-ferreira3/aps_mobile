@@ -13,7 +13,7 @@ class PedidoRepository{
     final finalizarPedidoClienteURl = "$URL/api/pedido";
 
     final body = {
-      "idCLiente" : idCliente
+      "idCliente" : idCliente
     };
 
     final response = await http.post(finalizarPedidoClienteURl, headers: header, body: jsonEncode(body));
